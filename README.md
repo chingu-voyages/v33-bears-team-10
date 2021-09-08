@@ -87,6 +87,7 @@ We, members of chingu, decided that we'd make this application come to fruition.
 - [React](https://reactjs.org/)
 - [Redux](https://redux.js.org/)
 - [Spotify-Api](https://developer.spotify.com/)
+- [Genius-Api](https://docs.genius.com/)
 
 <!-- GETTING STARTED -->
 
