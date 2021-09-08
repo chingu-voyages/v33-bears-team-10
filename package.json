@@ -39,7 +39,7 @@
     "typescript": "4.4.2"
   },
   "lint-staged": {
-    ".": "next lint",
+    "*.{js,ts,jsx,tsx}": "next lint --fix",
     "*.{js,jsx,ts,tsx,css,md}": "prettier --write"
   }
 }
