@@ -1,3 +1,15 @@
+:root {
+  --light-shades: #f1f0f2;
+  --light-accent: #1bd760;
+  --main-brand-color: #3fa5bf;
+  --dark-accent: #686b57;
+  --dark-shades: #293040;
+}
+
+html {
+  box-sizing: border-box;
+}
+
 html,
 body {
   padding: 0;
@@ -11,6 +23,8 @@ a {
   text-decoration: none;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
