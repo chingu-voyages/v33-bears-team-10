@@ -1,13 +1,16 @@
-import React, { ReactNode } from 'react';
 import { AppProps } from '../interfaces';
+
 import styles from '../styles/Layout.module.scss';
+
+import Footer from './Footer';
+import Nav from './Nav';
 
 const Layout = ({ children }: AppProps) => {
   return (
     <>
-      <nav className={styles.nav}> Nav Component here </nav>
+      <Nav />
       <div>{children}</div>
-      <footer> Footer component here</footer>
+      <Footer />
     </>
   );
 };
