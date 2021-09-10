@@ -10,7 +10,7 @@
 *** I'm using markdown "reference style" links for readability.
 *** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
 *** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.        
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
 
@@ -163,7 +163,7 @@ TBD
 ## Contact
 
 - Angelo - [@Angel*Poole*](https://twitter.com/Angel_Poole_) - Angelo.m.poole@gmail.com
-- Torja - [@twitter_handle](https://twitter.com/twitter_handle) - email
+- Torja - [Torja99](https://www.linkedin.com/in/torja99/) - torja50@outlook.com
 - Andrew - [@twitter_handle](https://twitter.com/twitter_handle) - email
 - Erik - [@twitter_handle](https://twitter.com/twitter_handle) - email
 - Hunter - [@twitter_handle](https://twitter.com/twitter_handle) - email
