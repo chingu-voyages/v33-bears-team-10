@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 // import Link from 'next/link';
-// each 'Hero' section should lead us to their respective pages.
+// TODO each 'Hero' section should lead us to their respective pages.
 
 import styles from '../styles/Home.module.scss';
 

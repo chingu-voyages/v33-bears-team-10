@@ -1,4 +1,8 @@
 .footer {
   min-height: 4em;
   background-color: var(--dark-accent);
+  transition: all;
+  &:hover {
+    background-color: cadetblue;
+  }
 }
