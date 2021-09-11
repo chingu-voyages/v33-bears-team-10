@@ -1,6 +1,8 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 // import Link from 'next/link';
+
+import QuizHero from '../components/sections/QuizHero';
 // TODO each 'Hero' section should lead us to their respective pages.
 
 import styles from '../styles/Home.module.scss';
@@ -20,9 +22,7 @@ const Home: NextPage = () => {
         <div className={styles.card}>
           <h2> Application Hero section </h2>{' '}
         </div>
-        <div className={styles.card}>
-          <h2> Quizz hero section </h2>{' '}
-        </div>
+        <QuizHero />
         <div className={styles.card}>
           <h2> Data hero section </h2>{' '}
         </div>
