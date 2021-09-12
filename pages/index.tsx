@@ -16,9 +16,8 @@ const Home: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <h2 className={styles.h2container}>Welcome to spotMe!</h2>
-
       <main className={styles.main}>
+        <h2 className={styles.h2container}>Welcome to spotMe!</h2>
         <div className={styles.card}>
           <h2> Application Hero section </h2>{' '}
         </div>

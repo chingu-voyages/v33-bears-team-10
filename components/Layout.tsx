@@ -9,7 +9,7 @@ const Layout = ({ children }: AppProps) => {
   return (
     <>
       <Nav />
-      <div>{children}</div>
+      {children}
       <Footer />
     </>
   );
