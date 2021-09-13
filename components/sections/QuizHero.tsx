@@ -19,7 +19,7 @@ import quizImage from '../../public/undraw-quiz.svg';
 
 const QuizHero = () => {
   return (
-    <div className={styles.cardContainer}>
+    <div className={styles.quizCardContainer}>
       <div className={styles.flexDetailContainer}>
         <div className={styles.quizGraphicGroup}>
           <h2>Take the quizz!</h2>
