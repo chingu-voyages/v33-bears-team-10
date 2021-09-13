@@ -2,6 +2,7 @@ import React from 'react';
 import styles from '../../styles/QuizHero.module.scss';
 
 import Image from 'next/image';
+import Link from 'next/Link';
 import quizImage from '../../public/undraw-quiz.svg';
 
 // Each hero will host the inner card component and details
@@ -32,9 +33,14 @@ const QuizHero = () => {
             />
           </div>
         </div>
-        <h4 className={styles.details}>
-          Play a game based on your favorite songs or playlists!
-        </h4>
+        <div>
+          <h4 className={styles.details}>
+            Play a game based on your favorite songs or playlists!
+          </h4>
+          <Link href='/QuizSelection'>
+            <a>Play the quiz</a>
+          </Link>
+        </div>
       </div>
     </div>
   );

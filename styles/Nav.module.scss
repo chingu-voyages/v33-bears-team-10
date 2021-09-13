@@ -5,3 +5,50 @@
   z-index: 100;
   min-height: 4em;
 }
+
+.navUl {
+  margin: 0 0 0 1em;
+  padding-right: 1em;
+
+  display: flex;
+  min-height: inherit;
+  justify-content: flex-end;
+  align-items: center;
+  list-style-type: none;
+  gap: 1em;
+}
+
+.hamburger {
+  // ::before {
+  //   background-color: red;
+  //   content: '\e602';
+  // }
+
+  // font-style: normal;
+  // font-weight: 400;
+  // font-variant: normal;
+  // text-transform: none;
+  // line-height: 1;
+}
+
+@media screen and (max-width: 425px) {
+  .navUl {
+    padding: 3em 2em 5em 2em;
+    flex-flow: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    margin: 0;
+
+    > li {
+      width: 100%;
+      padding: 1em;
+      background-color: red;
+    }
+  }
+
+  .nav {
+    position: fixed;
+    right: 0;
+    min-height: 100vh;
+  }
+}
