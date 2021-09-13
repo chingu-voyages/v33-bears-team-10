@@ -10,15 +10,12 @@ const Nav = () => {
   useOnClickOutside(node, () => setNavOpen(false));
 
   const toggleNav = () => {
-    console.log(navOpen);
     setNavOpen((prevState) => !prevState);
-    console.log(navOpen, 'after');
   };
 
   let navClassname = navOpen
     ? `${styles.nav} ${styles.navOpen}`
     : `${styles.nav}`;
-  console.log(navClassname, navOpen);
 
   let ulClassname = navOpen
     ? `${styles.navUl} ${styles.ulOpen}`
