@@ -18,22 +18,29 @@
   gap: 1em;
 }
 
-.hamburger {
-  // ::before {
-  //   background-color: red;
-  //   content: '\e602';
-  // }
+.openNavButton {
+  z-index: 500;
+  position: fixed;
+  transform: translateX(-120%);
 
-  // font-style: normal;
-  // font-weight: 400;
-  // font-variant: normal;
-  // text-transform: none;
-  // line-height: 1;
+  top: 50;
+
+  margin-top: 1em;
+  // margin-right: 1em;
+  padding: 1em;
+
+  color: aliceblue;
+}
+
+// todo swap out button with hamburger
+.hamburger-open {
+  color: teal;
 }
 
 @media screen and (max-width: 425px) {
   .navUl {
-    padding: 3em 2em 5em 2em;
+    // display: none;
+    padding: 5em 2em 5em 2em;
     flex-flow: column;
     align-items: flex-end;
     justify-content: flex-start;
@@ -47,8 +54,33 @@
   }
 
   .nav {
+    transform: translateX(102%);
+    transition: all 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    // display: none;
+    // background-color: transparent;
     position: fixed;
     right: 0;
     min-height: 100vh;
+  }
+
+  .ulOpen {
+    display: flex;
+    // transform: translateX(0);
+  }
+
+  .navOpen {
+    .openNavButton {
+      display: none;
+    }
+    transform: translateX(0%);
+    background-color: var(--light-accent);
+    // transition: var(--bouncy-transition);
+    right: 0;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  .openNavButton {
+    display: none;
   }
 }
