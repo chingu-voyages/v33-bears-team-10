@@ -2,17 +2,25 @@
   composes: cardContainer from './utils.module.scss';
 }
 
+.link {
+  display: inline-block;
+  background-color: var(--light-shades);
+  align-self: center;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  border-radius: var(--border-radius);
+
+  &:hover {
+    background-color: #99dfb4;
+  }
+}
+
 .flexDetailContainer {
   min-height: 100%;
   display: flex;
   align-items: center;
   background-color: #4ad17c;
   gap: 1em;
-
-  @media screen and (max-width: 321px) {
-    min-width: none;
-    flex-flow: column;
-  }
 }
 
 .quizGraphicGroup {
@@ -43,4 +51,20 @@
   background-color: #9c9c9c;
   border-radius: var(--border-radius);
   max-width: 15em;
+}
+
+@media screen and (max-width: 321px) {
+  .flexDetailContainer {
+    min-width: none;
+    flex-flow: column;
+  }
+
+  .quizGraphicGroup {
+    min-height: 10em;
+  }
+
+  .details {
+    min-height: 5em;
+    justify-content: center;
+  }
 }

@@ -9,6 +9,12 @@
   background-color: var(--dark-shades);
 }
 
+@media screen and (max-width: 321px) {
+  .container {
+    padding: 0;
+  }
+}
+
 .main {
   h1 {
     color: var(--light-shades);

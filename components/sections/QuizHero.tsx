@@ -33,12 +33,10 @@ const QuizHero = () => {
             />
           </div>
         </div>
-        <div>
-          <h4 className={styles.details}>
-            Play a game based on your favorite songs or playlists!
-          </h4>
+        <div className={styles.details}>
+          <h4>Play a game based on your favorite songs or playlists!</h4>
           <Link href='/QuizSelection'>
-            <a>Play the quiz</a>
+            <a className={styles.link}>Play the quiz</a>
           </Link>
         </div>
       </div>
