@@ -7,10 +7,39 @@
 
 .flexContainer {
   display: flex;
+  justify-content: space-around;
 }
 
-.dataGraphContainer {
+.dataChartContainer {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 20em;
+}
+
+.chartContainer {
+  height: 10em;
+  width: 10em;
+}
+
+.chart {
+  height: 10em;
+  width: 10em;
 }
 
 .dataDetailsContainer {
+  min-width: auto;
+  text-align: center;
+  background-color: var(--light-grey);
+  border-radius: var(--border-radius);
+  max-width: 15em;
+  // display: flex;
+  // flex-flow: column;
+  // align-items: center;
+  // justify-content: center;
+  // max-width: 10em;
+  // text-align: center;
+
+  background-color: var(--light-grey);
 }

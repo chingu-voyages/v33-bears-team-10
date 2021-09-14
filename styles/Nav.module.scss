@@ -1,4 +1,6 @@
 .nav {
+  display: flex;
+  justify-content: center;
   background-color: var(--light-accent);
   position: sticky;
   top: 0;
@@ -6,9 +8,19 @@
   min-height: 4em;
 }
 
+.link {
+}
+
+.flexContainer {
+  display: flex;
+}
+
 .navUl {
-  margin: 0 0 0 1em;
+  width: 50%;
+  margin: 0;
   padding-right: 1em;
+
+  // max-width: 50em;
 
   display: flex;
   min-height: inherit;
@@ -16,13 +28,22 @@
   align-items: center;
   list-style-type: none;
   gap: 1em;
+
+  a {
+    padding: 1em;
+    border-radius: var(--border-radius);
+  }
+
+  a:hover {
+    background-color: aliceblue;
+  }
 }
 
 .openNavButton {
   z-index: 500;
-  position: fixed;
-  transform: translateX(-120%);
-
+  position: relative;
+  transform: translateX(-140%);
+  height: 3em;
   top: 50;
 
   margin-top: 1em;
@@ -45,6 +66,7 @@
     align-items: flex-end;
     justify-content: flex-start;
     margin: 0;
+    width: 100%;
 
     > li {
       width: 100%;
@@ -70,7 +92,7 @@
       display: none;
     }
     transform: translateX(0%);
-    background-color: var(--light-accent);
+    background-color: hsla(142, 78%, 47%, 0.767);
     // transition: var(--bouncy-transition);
     right: 0;
   }

@@ -27,25 +27,26 @@ const Nav = () => {
         <button onClick={toggleNav} className={styles.openNavButton}>
           O
         </button>
+
         <ul className={ulClassname}>
           <li>
             <Link href='/'>
-              <a>Home</a>
+              <a className={styles.link}>Home</a>
             </Link>
           </li>
           <li>
             <Link href='/QuizSelection'>
-              <a>Quiz</a>
+              <a className={styles.link}>Quiz</a>
             </Link>
           </li>
           <li>
             <Link href='/'>
-              <a>Data</a>
+              <a className={styles.link}>Data</a>
             </Link>
           </li>
           <li>
             <Link href='/'>
-              <a>About</a>
+              <a className={styles.link}>About</a>
             </Link>
           </li>
           <div className={styles.hamburger}></div>
