@@ -42,3 +42,14 @@
   min-height: 100%;
   width: 10em;
 }
+
+@media screen and (max-width: 321px) {
+  .flexContainer {
+    min-width: none;
+    flex-flow: column;
+  }
+
+  .dataChartContainer {
+    min-height: 13em;
+  }
+}

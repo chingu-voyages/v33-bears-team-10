@@ -42,3 +42,14 @@
 .link {
   composes: cardLink from './utils.module.scss';
 }
+
+@media screen and (max-width: 321px) {
+  .flexContainer {
+    min-width: none;
+    flex-flow: column;
+  }
+
+  .dataChartContainer {
+    min-height: 13em;
+  }
+}
