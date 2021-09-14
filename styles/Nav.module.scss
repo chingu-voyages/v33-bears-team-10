@@ -1,7 +1,105 @@
 .nav {
+  display: flex;
+  justify-content: center;
   background-color: var(--light-accent);
   position: sticky;
   top: 0;
   z-index: 100;
   min-height: 4em;
+}
+
+.link {
+}
+
+.flexContainer {
+  display: flex;
+}
+
+.navUl {
+  width: 50%;
+  margin: 0;
+  padding-right: 1em;
+
+  // max-width: 50em;
+
+  display: flex;
+  min-height: inherit;
+  justify-content: flex-end;
+  align-items: center;
+  list-style-type: none;
+  gap: 1em;
+
+  a {
+    padding: 1em;
+    border-radius: var(--border-radius);
+  }
+
+  a:hover {
+    background-color: aliceblue;
+  }
+}
+
+.openNavButton {
+  z-index: 500;
+  position: relative;
+  transform: translateX(-140%);
+  height: 3em;
+  top: 50;
+
+  margin-top: 1em;
+  // margin-right: 1em;
+  padding: 1em;
+
+  color: aliceblue;
+}
+
+// todo swap out button with hamburger
+.hamburger-open {
+  color: teal;
+}
+
+@media screen and (max-width: 480px) {
+  .navUl {
+    // display: none;
+    padding: 5em 2em 5em 2em;
+    flex-flow: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    margin: 0;
+    width: 100%;
+
+    > li {
+      width: 100%;
+      padding: 1em;
+      background-color: red;
+    }
+  }
+
+  .nav {
+    transform: translateX(102%);
+    transition: all 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+    position: fixed;
+    right: 0;
+    min-height: 100vh;
+  }
+
+  .ulOpen {
+    display: flex;
+  }
+
+  .navOpen {
+    .openNavButton {
+      display: none;
+    }
+    transform: translateX(0%);
+    background-color: hsla(142, 78%, 47%, 0.767);
+    // transition: var(--bouncy-transition);
+    right: 0;
+  }
+}
+
+@media screen and (min-width: 481px) {
+  .openNavButton {
+    display: none;
+  }
 }

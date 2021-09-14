@@ -18,6 +18,7 @@
   "dependencies": {
     "next": "11.1.2",
     "react": "17.0.2",
+    "react-chartjs-2": "^3.0.4",
     "react-dom": "17.0.2",
     "sass": "^1.39.0"
   },
@@ -42,6 +43,6 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "next lint . --fix",
-    "*.{js,jsx,ts,tsx,css,md}": "prettier --write"
+    "*.{js,jsx,ts,tsx,css,md,scss}": "prettier --write"
   }
 }

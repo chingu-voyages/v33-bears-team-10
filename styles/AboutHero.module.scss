@@ -1,0 +1,55 @@
+.aboutCardContainer {
+  composes: cardContainer from './utils.module.scss';
+  background: linear-gradient(#d5f0da, #7ab184);
+  // #B2E9BC
+}
+
+.flexContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  // min-height: 20em;
+}
+
+.flexColContainer {
+  display: flex;
+  flex-flow: column;
+  height: 20em;
+  justify-content: center;
+}
+
+.teamDetailsContainer {
+  min-width: auto;
+  text-align: center;
+  background-color: var(--light-grey);
+  border-radius: var(--border-radius);
+  max-width: 15em;
+
+  background-color: var(--light-grey);
+}
+.link {
+  composes: cardLink from './utils.module.scss';
+}
+
+.teamContainer {
+  display: flex;
+  align-items: center;
+  // background-color: red;
+  // min-height: 20em;
+}
+.teamImageContainer {
+  display: block;
+  min-height: 100%;
+  width: 10em;
+}
+
+@media screen and (max-width: 321px) {
+  .flexContainer {
+    min-width: none;
+    flex-flow: column;
+  }
+
+  .dataChartContainer {
+    min-height: 13em;
+  }
+}
