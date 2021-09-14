@@ -8,6 +8,7 @@
 .flexContainer {
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
 .dataChartContainer {
@@ -34,12 +35,10 @@
   background-color: var(--light-grey);
   border-radius: var(--border-radius);
   max-width: 15em;
-  // display: flex;
-  // flex-flow: column;
-  // align-items: center;
-  // justify-content: center;
-  // max-width: 10em;
-  // text-align: center;
 
   background-color: var(--light-grey);
+}
+
+.link {
+  composes: cardLink from './utils.module.scss';
 }

@@ -50,7 +50,7 @@ const DataHero = () => {
         <div className={styles.dataDetailsContainer}>
           <h2>Look at your data in cool graphs</h2>
           <Link href='/Data'>
-            <a> See your data </a>
+            <a className={styles.link}> See your data </a>
           </Link>
         </div>
       </div>

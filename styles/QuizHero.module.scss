@@ -5,17 +5,21 @@
 }
 
 .link {
-  display: inline-block;
-  background-color: var(--light-shades);
-  align-self: center;
-  padding: 0.5em;
-  margin-bottom: 1em;
-  border-radius: var(--border-radius);
-
-  &:hover {
-    background-color: #99dfb4;
-  }
+  composes: cardLink from './utils.module.scss';
 }
+
+// .link {
+//   display: inline-block;
+//   background-color: var(--light-shades);
+//   align-self: center;
+//   padding: 0.5em;
+//   margin-bottom: 1em;
+//   border-radius: var(--border-radius);
+
+//   &:hover {
+//     background-color: #99dfb4;
+//   }
+// }
 
 .flexDetailContainer {
   min-height: 100%;
