@@ -1,0 +1,39 @@
+:root {
+  --light-shades: #f1f0f2;
+  --light-accent: #1bd760;
+  --main-brand-color: #3fa5bf;
+  --dark-accent: #686b57;
+  --dark-shades: #293040;
+  --light-grey: #9c9c9c;
+
+  --border-radius: 0.7em;
+  --bouncy-transition: all 500ms cubic-bezier(1, -0.6, 0, 1.65);
+}
+
+html {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}

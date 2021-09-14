@@ -166,7 +166,7 @@ TBD
 - Torja - [Torja99](https://www.linkedin.com/in/torja99/) - torja50@outlook.com
 - Andrew - [@twitter_handle](https://twitter.com/twitter_handle) - email
 - Erik - [@twitter_handle](https://twitter.com/twitter_handle) - email
-- Hunter - [@twitter_handle](https://twitter.com/twitter_handle) - email
+- Derik "Hunter" Marshall - [LinkedIn](https://www.linkedin.com/in/dh-marshall/) - beidah@gmail.com
 
 Project Link: [https://github.com/chingu-voyages/v33-bears-team-10](https://github.com/chingu-voyages/v33-bears-team-10) <!-- @TODO Update this on host -->
 

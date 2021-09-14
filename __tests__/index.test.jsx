@@ -2,18 +2,29 @@
  * @jest-environment jsdom
  */
 
+//Follow the import mock arange act assert convention
+
+// import
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import Home from '../pages/index';
 
+// setup mocks before tests, eg: you need a server running so you open a mock server
+
+jest.mock('../public/undraw-quiz.svg');
+
 describe('Home', () => {
   it('renders a heading', () => {
+    // arrange
+    // act
+    // assert
+    // arrange - render components needed
     render(<Home />);
-
+    // act upon those arranged objects
     const heading = screen.getByRole('heading', {
-      name: /welcome to next\.js!/i,
+      name: /Welcome to spotMe!/,
     });
-
+    // assert functionality, what should be happening?
     expect(heading).toBeInTheDocument();
   });
 });

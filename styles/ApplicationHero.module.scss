@@ -1,0 +1,16 @@
+.applicationCardContainer {
+  composes: cardContainer from './utils.module.scss';
+}
+
+.callToAction__container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 20em;
+}
+
+.callToAction {
+  text-align: center;
+}

@@ -1,0 +1,55 @@
+.dataCardContainer {
+  composes: cardContainer from './utils.module.scss';
+  // #97F29D
+
+  background: linear-gradient(#97f29d, #b1eec2);
+}
+
+.flexContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.dataChartContainer {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 20em;
+}
+
+.chartContainer {
+  height: 10em;
+  width: 10em;
+}
+
+.chart {
+  height: 10em;
+  width: 10em;
+}
+
+.dataDetailsContainer {
+  min-width: auto;
+  text-align: center;
+  background-color: var(--light-grey);
+  border-radius: var(--border-radius);
+  max-width: 15em;
+
+  background-color: var(--light-grey);
+}
+
+.link {
+  composes: cardLink from './utils.module.scss';
+}
+
+@media screen and (max-width: 321px) {
+  .flexContainer {
+    min-width: none;
+    flex-flow: column;
+  }
+
+  .dataChartContainer {
+    min-height: 13em;
+  }
+}
