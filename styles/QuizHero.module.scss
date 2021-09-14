@@ -1,5 +1,7 @@
 .quizCardContainer {
   composes: cardContainer from './utils.module.scss';
+
+  background: linear-gradient(#1bd760, #97f29d);
 }
 
 .link {
@@ -19,7 +21,7 @@
   min-height: 100%;
   display: flex;
   align-items: center;
-  background-color: #4ad17c;
+
   gap: 1em;
 }
 

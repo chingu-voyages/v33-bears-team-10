@@ -1,3 +1,16 @@
 .dataCardContainer {
   composes: cardContainer from './utils.module.scss';
+  // #97F29D
+
+  background: linear-gradient(#97f29d, #b1eec2);
+}
+
+.flexContainer {
+  display: flex;
+}
+
+.dataGraphContainer {
+}
+
+.dataDetailsContainer {
 }
