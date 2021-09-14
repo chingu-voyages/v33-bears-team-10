@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: var(--dark-shades);
+  background: radial-gradient(#3a445c, var(--dark-shades));
 }
 
 @media screen and (max-width: 321px) {
