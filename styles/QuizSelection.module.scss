@@ -1,0 +1,56 @@
+.card {
+  background-color: #51a5c0;
+  margin: 0;
+  padding: 0.25em;
+  min-width: 10em;
+  min-height: 20em;
+  font-size: 24px;
+  transition: var(--bouncy-transition);
+  @media screen and (max-width: 414px) {
+    margin: 0;
+    min-width: 2em;
+    font-size: inherit;
+    height: 100%;
+  }
+}
+.flexDetailContainer {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  // background-color: #4ad17c;
+  background-color: --light-accent;
+  gap: 1em;
+
+  @media screen and (max-width: 321px) {
+    min-width: none;
+    flex-flow: column;
+  }
+}
+
+.quizGraphicGroup {
+  min-height: 20em;
+  max-width: 50%;
+  display: flex;
+  flex-flow: column;
+  padding-left: 1em;
+  justify-content: center;
+  align-items: center;
+
+  h2 {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    text-align: center;
+    background-color: gray;
+    border-radius: var(--border-radius);
+    margin-bottom: -1em;
+  }
+}
+
+.quizImg {
+}
+
+.details {
+  min-width: auto;
+  background-color: grey;
+  max-width: 15em;
+}
