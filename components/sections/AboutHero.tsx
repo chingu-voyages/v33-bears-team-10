@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../../styles/AboutHero.module.scss';
-import Link from 'next/Link';
+import Link from 'next/link';
 import Image from 'next/image';
 import Team_Illustration from '../../public/Team_Illustration.svg';
 
