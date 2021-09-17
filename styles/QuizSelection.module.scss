@@ -1,23 +1,58 @@
 .pageContainer {
-  // background-color: red;
 }
 .card {
-  // background-color: var(--main-brand-color);
   margin: 0;
   padding: 0.25em;
   min-width: 10em;
   min-height: 20em;
   font-size: 24px;
   transition: var(--bouncy-transition);
+  text-align: center;
   &First {
     @extend .card;
     background-color: var(--light-grey);
   }
   &Second {
     @extend .card;
-    background-color: var(--main-brand-color);
+    // background-color: var(--main-brand-color);
+    background: linear-gradient(var(--light-grey), #9c9c9c3f);
+    // background: linear-gradient(#97f29d, #b1eec2);
   }
 }
+
+.button {
+  position: relative;
+  overflow: hidden;
+  color: var(--light-shades);
+  background-color: var(--main-brand-color);
+  border-radius: var(--border-radius);
+  border-style: solid;
+  font-family: inherit;
+  transition: background 400ms;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  outline: none;
+  border: none;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.ripple {
+  background-position: center;
+  transition: background 0.8s;
+  &.ripple:hover {
+    background: var(--main-brand-color)
+      radial-gradient(circle, transparent 1%, var(--light-grey) 1%)
+      center/15000%;
+  }
+  &.ripple:active {
+    background-color: var(--main-brand-color);
+    background-size: 100%;
+    transition: background 0s;
+  }
+}
+/* Button style */
 
 @media only screen and (min-width: 768px) {
   .img-banner {
