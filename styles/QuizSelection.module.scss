@@ -1,56 +1,41 @@
+.pageContainer {
+  // background-color: red;
+}
 .card {
-  background-color: #51a5c0;
+  // background-color: var(--main-brand-color);
   margin: 0;
   padding: 0.25em;
   min-width: 10em;
   min-height: 20em;
   font-size: 24px;
   transition: var(--bouncy-transition);
-  @media screen and (max-width: 414px) {
-    margin: 0;
-    min-width: 2em;
-    font-size: inherit;
-    height: 100%;
+  &First {
+    @extend .card;
+    background-color: var(--light-grey);
   }
-}
-.flexDetailContainer {
-  min-height: 100%;
-  display: flex;
-  align-items: center;
-  // background-color: #4ad17c;
-  background-color: --light-accent;
-  gap: 1em;
-
-  @media screen and (max-width: 321px) {
-    min-width: none;
-    flex-flow: column;
+  &Second {
+    @extend .card;
+    background-color: var(--main-brand-color);
   }
 }
 
-.quizGraphicGroup {
-  min-height: 20em;
-  max-width: 50%;
-  display: flex;
-  flex-flow: column;
-  padding-left: 1em;
-  justify-content: center;
-  align-items: center;
-
-  h2 {
-    padding-top: 1em;
-    padding-bottom: 1em;
-    text-align: center;
-    background-color: gray;
-    border-radius: var(--border-radius);
-    margin-bottom: -1em;
+@media only screen and (min-width: 768px) {
+  .img-banner {
+    display: block;
+    width: 100%;
+    padding-bottom: 30px;
   }
-}
-
-.quizImg {
-}
-
-.details {
-  min-width: auto;
-  background-color: grey;
-  max-width: 15em;
+  .wrapper {
+    width: 600px;
+    margin: 0 auto;
+  }
+  .img-info h2 {
+    padding: 20px 0px 0px;
+  }
+  .img-info p {
+    padding: 20px 0px 0px;
+  }
+  .img-me {
+    padding-top: 30px;
+  }
 }
