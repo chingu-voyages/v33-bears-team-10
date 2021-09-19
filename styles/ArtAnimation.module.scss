@@ -1,65 +1,55 @@
-.fadecycle > * {
-  opacity: 0;
+.img1,
+.img2,
+.img3,
+.img4 {
   position: absolute;
-  width: 200px;
-  line-height: 200px;
-  text-align: center;
-  display: block;
-
-  width: 60%;
-
-  margin-left: auto;
-
-  margin-right: auto;
+  top: 0;
+  width: 50%;
+  // margin: auto auto;
+  height: 100px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -18;
+  opacity: 0;
+  animation-name: fade;
+  animation-duration: 16s;
+  animation-iteration-count: infinite;
 }
 
-.fadecycle > *:nth-child(1) {
-  background: lightsalmon;
+.img1 {
+  animation-delay: 0s;
 }
-.fadecycle > *:nth-child(2) {
-  background: lightsteelblue;
+.img2 {
+  animation-delay: 4s;
 }
-.fadecycle > *:nth-child(3) {
-  background: lightseagreen;
+.img3 {
+  animation-delay: 8s;
 }
-.fadecycle > *:nth-child(4) {
-  background: lightskyblue;
-}
-
-// Animation settings
-$totalTime: 6s;
-$items: 2;
-$animationSpeed: 2.5;
-
-// Calculate animation time in seconds (how long the fade lasts)
-$animationTime: 0s + $totalTime / ($items * $animationSpeed * 2);
-// Calculate show time in seconds (how long the element is displayed)
-$showTime: (0s + $totalTime - ($animationTime * $items)) / $items;
-
-// Set animation for each element
-@for $i from 1 through $items {
-  .fadecycle > *:nth-child(#{$i}) {
-    // Delay is increased for each item
-    // Starting with an offset of -$animationTime so the first element is displayed on load
-    $delay: -$animationTime + ($animationTime + $showTime) * ($i - 1);
-    animation: fadeinout $totalTime linear $delay infinite;
-  }
+.img4 {
+  animation-delay: 12s;
 }
 
-// Calculate percentages of the display time for keyframes
-$animationPercentage: 0% + 100 * (($animationTime / $totalTime));
-$showPercentage: 0% + 100 * ($showTime / $totalTime);
-
-@keyframes fadeinout {
-  0% {
+@keyframes fade {
+  /* By offsetting the fade out and animating z-index, we can prevent the background from showing up at all*/
+  00.00% {
     opacity: 0;
+    z-index: -10;
   }
-  #{$animationPercentage},
-  #{$animationPercentage + $showPercentage} {
+  06.25% {
     opacity: 1;
+    z-index: -10;
   }
-  #{$showPercentage + $animationPercentage * 2},
-  100% {
+  31.25% {
+    opacity: 1;
+    z-index: -12;
+  }
+  37.50% {
     opacity: 0;
+    z-index: -14;
+  }
+  100.0% {
+    opacity: 0;
+    z-index: -16;
   }
 }

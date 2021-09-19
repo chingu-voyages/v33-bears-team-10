@@ -13,6 +13,7 @@ const QuizSelection: React.FC = () => {
             'https://i.scdn.co/image/ab67616d00001e02b6d4566db0d12894a1a3b7a2',
             'https://i.scdn.co/image/ab67616d00001e028cb690f962092fd44bbe2bf4',
             'https://i.scdn.co/image/ab67616d00001e0228933b808bfb4cbbd0385400',
+            'https://i.scdn.co/image/ab67616d00001e028cb690f962092fd44bbe2bf4',
           ]}
         />
       </div>
@@ -23,6 +24,7 @@ const QuizSelection: React.FC = () => {
             'https://i.scdn.co/image/ab67616d00001e02b6d4566db0d12894a1a3b7a2',
             'https://i.scdn.co/image/ab67616d00001e028cb690f962092fd44bbe2bf4',
             'https://i.scdn.co/image/ab67616d00001e0228933b808bfb4cbbd0385400',
+            'https://i.scdn.co/image/ab67616d00001e028cb690f962092fd44bbe2bf4',
           ]}
         />
       </div>
@@ -31,26 +33,3 @@ const QuizSelection: React.FC = () => {
 };
 
 export default QuizSelection;
-// const example = () => {
-//   return (
-//     <div className={styles.PageContainer}>
-//       <ul>
-//         <li>
-//           <Component />
-//         </li>
-//       </ul>
-
-//       <Component />
-//       <Component />
-
-//       <div oneCard>
-//         <div catagory1>
-//           <div role='button'>topTracks</div>
-//           <div>Playlists</div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default example;
