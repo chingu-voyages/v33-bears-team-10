@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 /**
  * use audio should accept a song's url to the mp3 file and return a new audio instance with controls to control that instance.
@@ -22,8 +22,20 @@ import React from 'react';
  */
 
 export const useAudio = (url: string) => {
-  // let AudioContext = window.AudioContext || window.webkitAudioContext;
-  // var audioCtx = new AudioContext();
-  // console.log(audioCtx);
-  // return <audio src={url} />;
+  let audioContext = useRef<AudioContext | null>(null);
+
+  useEffect(() => {
+    audioContext.current = new AudioContext();
+    // useEffect will ensure that the page is loaded before setting up an audio context.
+  }, []);
+
+  console.log(audioContext);
+
+  let playAudio = () => {
+    console.log('hit play audio');
+  };
+
+  // let osc = audioContext
+
+  return <audio src={url} />;
 };

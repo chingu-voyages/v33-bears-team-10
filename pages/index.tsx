@@ -14,8 +14,9 @@ const testAudio =
   'https://p.scdn.co/mp3-preview/de1bf03287866de45384bd67332c9d98e9438aad?cid=774b29d4f13844c495f206cafdad9c86';
 
 const Home: NextPage = () => {
-  console.log(useAudio);
-  useAudio(testAudio);
+  let audio = useAudio(testAudio);
+
+  console.log(audio, 'here inside of homepage');
 
   return (
     <div className={styles.container}>
