@@ -5,11 +5,18 @@ import ApplicationHero from '../components/sections/ApplicationHero';
 import QuizHero from '../components/sections/QuizHero';
 import DataHero from '../components/sections/DataHero';
 import AboutHero from '../components/sections/AboutHero';
+
+import { useAudio } from '../hooks/useAudio';
 // TODO each 'Hero' section should lead us to their respective pages.
 
 import styles from '../styles/Home.module.scss';
+const testAudio =
+  'https://p.scdn.co/mp3-preview/de1bf03287866de45384bd67332c9d98e9438aad?cid=774b29d4f13844c495f206cafdad9c86';
 
 const Home: NextPage = () => {
+  console.log(useAudio);
+  useAudio(testAudio);
+
   return (
     <div className={styles.container}>
       <Head>
