@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useAudioPlayer } from '../utilities/audioPlayer';
+import { useAudioPlayer } from '../hooks/useAudioPlayer';
 
 const TestPage = () => {
   const testAudio =
