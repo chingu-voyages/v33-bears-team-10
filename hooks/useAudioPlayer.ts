@@ -8,21 +8,14 @@ import React, { useState } from 'react';
  */
 
 export const useAudioPlayer = (timer = 10, numberOfSongs = 10) => {
-  // type the object of audio's properly.
-  const [state, setState] = useState<any>({});
+  // If you save audio and audioContext, you'll be able to refrence and edit them at any time.
   const [currentSong, setCurrentSong] = useState<{
-    song: HTMLAudioElement;
+    audio: HTMLAudioElement;
     audioContext: AudioContext;
   } | null>();
 
-  // try to do this without state, eg let ids = {}
-
-  if (!currentSong?.audioContext) {
-    console.log('no current song');
-  }
-
   const pauseSong = () => {
-    currentSong?.song.pause();
+    currentSong?.audio.pause();
 
     if (currentSong?.audioContext.state !== 'closed') {
       currentSong?.audioContext?.close();
@@ -33,6 +26,7 @@ export const useAudioPlayer = (timer = 10, numberOfSongs = 10) => {
   const playSong = (url: string) => {
     if (currentSong) pauseSong();
 
+    // audioContext doesnt do much yet, but we'll be able to change and switchup how the audio fades in and fades out.
     let audioContext = new AudioContext();
     if (audioContext.state === 'suspended') audioContext.resume();
 
@@ -41,7 +35,7 @@ export const useAudioPlayer = (timer = 10, numberOfSongs = 10) => {
     audio.crossOrigin;
 
     // add audio to state to later pause or remove audio.
-    addSongToState(audio, audioContext);
+    setCurrentSong({ audio, audioContext });
 
     audio.play();
 
@@ -54,49 +48,5 @@ export const useAudioPlayer = (timer = 10, numberOfSongs = 10) => {
     }, timer * 1000);
   };
 
-  const addSongToState = (
-    song: HTMLAudioElement,
-    audioContext: AudioContext
-  ) => {
-    setCurrentSong({ song, audioContext });
-  };
-
-  const trilPlaySong = (url: string) => {
-    let audioContext = new AudioContext();
-    if (audioContext.state === 'suspended') {
-      audioContext.resume();
-    }
-    let key = url.slice(9, 15);
-
-    if (state[key]) {
-      console.error('key already exists');
-      return new Error('key already exists');
-    }
-
-    let audio = new Audio(url);
-    console.log(key, url);
-
-    // If you save the audio inside of an object, you can reference that later and call methods on it.
-    let newPair = { [key]: audio };
-    setState({ ...state, ...newPair });
-    audio.crossOrigin = 'anonymous';
-    console.log('here');
-    const source = audioContext.createMediaElementSource(audio);
-    source.connect(audioContext.destination);
-
-    state[key].play();
-    console.log(state);
-    setTimeout(() => {
-      state[key].pause();
-    }, timer * 1000);
-  };
-
-  const pauseAll = () => {
-    // state.bells.pause();
-    for (let key in state) {
-      state[key].pause();
-    }
-  };
-
-  return { playSong, pauseAll, pauseSong };
+  return { playSong, pauseSong };
 };
