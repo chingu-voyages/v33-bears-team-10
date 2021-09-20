@@ -16,6 +16,8 @@ const testAudio =
 const Home: NextPage = () => {
   let audio = useAudio(testAudio);
 
+  // audio.fizzer
+
   console.log(audio, 'here inside of homepage');
 
   return (
