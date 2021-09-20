@@ -48,7 +48,9 @@ export const useAudioPlayer = (timer = 10, numberOfSongs = 10) => {
 
     // wait before stopping the song, song can be stoped either at base 10 seconds
     setTimeout(() => {
-      pauseSong();
+      if (!audio.paused) {
+        pauseSong();
+      }
     }, timer * 1000);
   };
 
