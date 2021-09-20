@@ -15,8 +15,15 @@ export const useAudioPlayer = (timer = 10, numberOfSongs = 10) => {
   } | null>();
 
   const pauseSong = () => {
-    currentSong?.audio.pause();
+    if (currentSong?.audio.paused) {
+      currentSong.audio.play();
+    } else {
+      currentSong?.audio.pause();
+    }
+  };
 
+  const endSong = () => {
+    currentSong?.audio.pause();
     if (currentSong?.audioContext.state !== 'closed') {
       currentSong?.audioContext?.close();
     }
@@ -24,7 +31,7 @@ export const useAudioPlayer = (timer = 10, numberOfSongs = 10) => {
   };
 
   const playSong = (url: string) => {
-    if (currentSong) pauseSong();
+    if (currentSong) endSong();
 
     // audioContext doesnt do much yet, but we'll be able to change and switchup how the audio fades in and fades out.
     let audioContext = new AudioContext();
@@ -41,12 +48,9 @@ export const useAudioPlayer = (timer = 10, numberOfSongs = 10) => {
 
     // wait before stopping the song, song can be stoped either at base 10 seconds
     setTimeout(() => {
-      audio?.pause();
-      if (audioContext.state !== 'closed') {
-        audioContext.close();
-      }
+      pauseSong();
     }, timer * 1000);
   };
 
-  return { playSong, pauseSong };
+  return { playSong, pauseSong, endSong };
 };
