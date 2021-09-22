@@ -14,13 +14,48 @@ export const useAudioPlayer = (userTimer = 10, numberOfSongs = 10) => {
     audioContext: AudioContext;
   } | null>();
 
+  const [paused, setPaused] = useState(true);
+  const [timeLeftInSong, setTimeLeftInSong] = useState(0);
+
+  useEffect(() => {
+    console.log('outer useEffect');
+    let pauseTimeout: NodeJS.Timer;
+
+    if (!paused && currentSong?.audioContext.state !== 'closed') {
+      console.log('creating interval');
+      pauseTimeout = setInterval(() => {
+        setTimeLeftInSong((prev) => (prev += 1));
+      }, 1000);
+    }
+    return () => {
+      console.log('>>> in cleanup', { timeLeftInSong });
+      console.log(pauseTimeout);
+      // check if we're paused, aswell as if there is a timeout already here.
+      console.log(paused);
+      if (paused) {
+        console.log('timeout');
+        clearInterval(pauseTimeout);
+      } else if (timeLeftInSong === userTimer) {
+        console.log(`we are done here ${timeLeftInSong}`);
+        setPaused(true);
+        console.log('clearing interval...');
+        clearInterval(pauseTimeout);
+        console.log('closing context...');
+        currentSong?.audioContext.close();
+        setTimeLeftInSong(0);
+      }
+    };
+  }, [paused, timeLeftInSong, userTimer, currentSong]);
+
   let audioCTX: AudioContext | undefined;
 
   const pauseSong = () => {
     if (currentSong?.audioContext.state === 'suspended') {
       currentSong.audioContext.resume();
+      setPaused(false);
     } else {
       currentSong?.audioContext.suspend();
+      setPaused(true);
     }
   };
 
@@ -60,10 +95,11 @@ export const useAudioPlayer = (userTimer = 10, numberOfSongs = 10) => {
     });
 
     audio.play();
+    setPaused(false);
   };
 
-  if (currentSong?.audioContext.state === 'suspended') {
-    console.log(currentSong.audioContext.currentTime);
-  }
+  // if (currentSong?.audioContext.state === 'suspended') {
+  //   console.log(currentSong.audioContext.currentTime);
+  // }
   return { playSong, pauseSong, endSong };
 };
