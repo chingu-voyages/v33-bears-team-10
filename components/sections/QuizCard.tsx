@@ -9,7 +9,7 @@ const QuizCard = ({ text, imageUrls }: Props) => {
   return (
     <div>
       <p>{text}</p>
-      <div>
+      <div className={styles.flexContainer}>
         <ArtAnimation imageUrls={imageUrls} />
       </div>
       <button className={styles.button + ' ' + styles.ripple}>Play</button>
