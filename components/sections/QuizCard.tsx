@@ -7,9 +7,11 @@ interface Props {
 }
 const QuizCard: React.FC<Props> = ({ text, imageUrls }) => {
   return (
-    <div className={styles.flexContainer}>
+    <div>
       <p>{text}</p>
-      <ArtAnimation imageUrls={imageUrls} />
+      <div>
+        <ArtAnimation imageUrls={imageUrls} />
+      </div>
       <button className={styles.button + ' ' + styles.ripple}>Play</button>
     </div>
   );

@@ -13,21 +13,20 @@ const imageUrls: [string, string, string, string] = [
 const QuizSelection: React.FC = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.cardFirst}>
-        <QuizCard
-          text='Play a game based on your playlists!'
-          imageUrls={imageUrls}
-        />
-        {/* <div>
-          <ArtAnimation imageUrls={imageUrls} />
-        </div> */}
-      </div>
-      <div className={styles.cardSecond}>
-        <QuizCard
-          text='Play a game based on your top tracks!'
-          imageUrls={imageUrls}
-        />
-      </div>
+      <main className={styles.main}>
+        <div className={styles.cardFirst}>
+          <QuizCard
+            text='Play a game based on your playlists!'
+            imageUrls={imageUrls}
+          />
+        </div>
+        <div className={styles.cardSecond}>
+          <QuizCard
+            text='Play a game based on your top tracks!'
+            imageUrls={imageUrls}
+          />
+        </div>
+      </main>
     </div>
   );
 };
