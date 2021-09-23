@@ -74,7 +74,6 @@ export const useAudioPlayer = (userTimer = 10, numberOfSongs = 10) => {
       if (!paused && timeLeftInSong < userTimer) {
         setTimeLeftInSong((prev) => (prev += 1));
       } else if (timeLeftInSong === userTimer) {
-        console.log('clearing');
         setPaused(true);
         setTimeLeftInSong(0);
         endSong();

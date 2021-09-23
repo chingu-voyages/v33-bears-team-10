@@ -7,8 +7,6 @@ const TestPage = () => {
 
   let audio = useAudioPlayer(5);
 
-  // console.log(audio.playSong);
-
   return (
     <div style={{ display: 'flex', justifyContent: 'center' }}>
       <button onClick={() => audio.playSong(testAudio)}>testButton</button>
