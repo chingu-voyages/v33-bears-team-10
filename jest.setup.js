@@ -8,3 +8,7 @@ jest.mock('react-chartjs-2', () => ({
   Line: () => null,
   Doughnut: () => null,
 }));
+
+window.AudioContext = jest.fn().mockImplementation(() => {
+  return {};
+});
