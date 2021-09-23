@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 /**
  *
@@ -15,57 +15,27 @@ export const useAudioPlayer = (userTimer = 10, numberOfSongs = 10) => {
   } | null>();
 
   const [paused, setPaused] = useState(true);
-  const [timeLeftInSong, setTimeLeftInSong] = useState(0);
-
-  useEffect(() => {
-    console.log('outer useEffect');
-    let pauseTimeout: NodeJS.Timer;
-
-    if (!paused && currentSong?.audioContext.state !== 'closed') {
-      console.log('creating interval');
-      pauseTimeout = setInterval(() => {
-        setTimeLeftInSong((prev) => (prev += 1));
-      }, 1000);
-    }
-    return () => {
-      console.log('>>> in cleanup', { timeLeftInSong });
-      console.log(pauseTimeout);
-      // check if we're paused, aswell as if there is a timeout already here.
-      console.log(paused);
-      if (paused) {
-        console.log('timeout');
-        clearInterval(pauseTimeout);
-      } else if (timeLeftInSong === userTimer) {
-        console.log(`we are done here ${timeLeftInSong}`);
-        setPaused(true);
-        console.log('clearing interval...');
-        clearInterval(pauseTimeout);
-        console.log('closing context...');
-        currentSong?.audioContext.close();
-        setTimeLeftInSong(0);
-      }
-    };
-  }, [paused, timeLeftInSong, userTimer, currentSong]);
-
-  let audioCTX: AudioContext | undefined;
+  const [timeLeftInSong, setTimeLeftInSong] = useState(0); // todo: give this a better name, this is counting up until i reach the users timer.
 
   const pauseSong = () => {
     if (currentSong?.audioContext.state === 'suspended') {
       currentSong.audioContext.resume();
       setPaused(false);
-    } else {
+    } else if (currentSong?.audioContext.state === 'running') {
       currentSong?.audioContext.suspend();
       setPaused(true);
+    } else if (currentSong?.audioContext.state === 'closed') {
+      setCurrentSong(null);
     }
   };
 
-  const endSong = () => {
+  const endSong = useCallback(() => {
     if (currentSong?.audioContext.state !== 'closed') {
+      setPaused(true);
       currentSong?.audioContext?.close();
     }
-
     setCurrentSong((prevState) => null);
-  };
+  }, [currentSong?.audioContext]);
 
   const playSong = (url: string) => {
     if (currentSong) endSong();
@@ -82,7 +52,7 @@ export const useAudioPlayer = (userTimer = 10, numberOfSongs = 10) => {
 
     let gain = audioContext.createGain();
     gain.gain.setValueAtTime(0.001, 0);
-    gain.gain.exponentialRampToValueAtTime(0.6, audioContext.currentTime + 1);
+    gain.gain.exponentialRampToValueAtTime(0.6, audioContext.currentTime + 0.5);
     gain.gain.exponentialRampToValueAtTime(0.0001, userTimer);
 
     track.connect(gain).connect(audioContext.destination);
@@ -98,8 +68,21 @@ export const useAudioPlayer = (userTimer = 10, numberOfSongs = 10) => {
     setPaused(false);
   };
 
-  // if (currentSong?.audioContext.state === 'suspended') {
-  //   console.log(currentSong.audioContext.currentTime);
-  // }
+  useEffect(() => {
+    // todo: this renders 3 times when we're closing out the interval, figure out how to stop timeLeft and pause from re-rendering 3 times
+    const countDown = setInterval(() => {
+      if (!paused && timeLeftInSong < userTimer) {
+        setTimeLeftInSong((prev) => (prev += 1));
+      } else if (timeLeftInSong === userTimer) {
+        console.log('clearing');
+        setPaused(true);
+        setTimeLeftInSong(0);
+        endSong();
+        clearInterval(countDown);
+      }
+    }, 1000);
+    return () => clearInterval(countDown);
+  }, [paused, timeLeftInSong, userTimer, endSong]);
+
   return { playSong, pauseSong, endSong };
 };
