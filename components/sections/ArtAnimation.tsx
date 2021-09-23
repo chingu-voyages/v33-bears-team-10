@@ -8,7 +8,7 @@ const imageSpecs = {
   height: 200,
   width: 200,
 };
-const ArtAnimation: React.FC<Props> = ({ imageUrls }) => {
+const ArtAnimation = ({ imageUrls }: Props) => {
   return (
     <div className={styles.flexContainer}>
       <div className={styles.img1}>

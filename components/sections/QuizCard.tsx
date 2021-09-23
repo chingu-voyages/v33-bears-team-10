@@ -5,7 +5,7 @@ interface Props {
   text: string;
   imageUrls: [string, string, string, string];
 }
-const QuizCard: React.FC<Props> = ({ text, imageUrls }) => {
+const QuizCard = ({ text, imageUrls }: Props) => {
   return (
     <div>
       <p>{text}</p>

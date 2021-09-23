@@ -10,7 +10,7 @@ const imageUrls: [string, string, string, string] = [
   'https://i.scdn.co/image/ab67616d00001e0228933b808bfb4cbbd0385400',
   'https://i.scdn.co/image/ab67616d00001e028cb690f962092fd44bbe2bf4',
 ];
-const QuizSelection: React.FC = () => {
+const QuizSelection = () => {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
