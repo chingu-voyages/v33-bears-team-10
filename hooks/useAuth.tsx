@@ -1,11 +1,21 @@
-import React, { useState, useEffect, useContext, createContext } from 'react';
+import React, {
+  useState,
+  useEffect,
+  useContext,
+  createContext,
+  ReactNode,
+} from 'react';
+
+import axios from 'axios';
 
 interface User {}
 
-const authContext = createContext();
+interface AuthContext {}
+
+const authContext = createContext<AuthContext>({} as AuthContext);
 
 // Provider component that wraps your app and makes auth object available to any child component that calls useAuth().
-export function ProvideAuth({ children }) {
+export function ProvideAuth({ children }: { children: ReactNode }) {
   const auth = useProvideAuth();
   return <authContext.Provider value={auth}>{children}</authContext.Provider>;
 }
@@ -43,9 +53,6 @@ function useProvideAuth() {
   return {
     user,
     signin,
-    signup,
     signout,
-    sendPasswordResetEmail,
-    confirmPasswordReset,
   };
 }
