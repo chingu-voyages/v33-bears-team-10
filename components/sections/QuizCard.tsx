@@ -7,11 +7,10 @@ interface Props {
 }
 const QuizCard = ({ text, imageUrls }: Props) => {
   return (
+    // <div className={styles.flexContainer}>
     <div>
       <p>{text}</p>
-      <div className={styles.flexContainer}>
-        <ArtAnimation imageUrls={imageUrls} />
-      </div>
+      <ArtAnimation imageUrls={imageUrls} />
       <button className={styles.button + ' ' + styles.ripple}>Play</button>
     </div>
   );
