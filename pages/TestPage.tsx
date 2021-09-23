@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAudioPlayer } from '../hooks/useAudioPlayer';
+import { useAuth } from '../hooks/useAuth';
 
 const TestPage = () => {
   const testAudio =
@@ -7,8 +8,11 @@ const TestPage = () => {
 
   let audio = useAudioPlayer(5);
 
+  const auth = useAuth();
+
   return (
     <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <button onClick={() => auth.signin()}></button>
       <button onClick={() => audio.playSong(testAudio)}>testButton</button>
       <button onClick={() => audio.pauseSong()}>pause all playBack</button>
       <button onClick={() => audio.endSong()}>preemptivly end song</button>

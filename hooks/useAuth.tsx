@@ -8,9 +8,17 @@ import React, {
 
 import axios from 'axios';
 
-interface User {}
+interface User {
+  username?: string;
+  avatar?: string;
+  token?: string;
+}
 
-interface AuthContext {}
+interface AuthContext {
+  user: User | null;
+  signin: () => void;
+  signout: () => void;
+}
 
 const authContext = createContext<AuthContext>({} as AuthContext);
 
@@ -31,7 +39,9 @@ function useProvideAuth() {
   // wrap methods we want to use, keep user in state
 
   // have this authenticate our user,
-  const signin = (email: string, password: string) => {};
+  const signin = () => {
+    console.log('fetch signin here');
+  };
 
   // clear our 0auth token / what we're using to keep them logged in
   const signout = () => {};
@@ -44,7 +54,7 @@ function useProvideAuth() {
     if (user) {
       setUser(user);
     } else {
-      setUser(false);
+      // setUser(false);
     }
 
     // Cleanup subscription on unmount

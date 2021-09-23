@@ -1,13 +1,16 @@
 import '../styles/globals.scss';
 import type { AppProps } from 'next/app';
+import { ProvideAuth } from '../hooks/useAuth';
 
 import Layout from '../components/Layout';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <ProvideAuth>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </ProvideAuth>
   );
 }
 export default MyApp;
