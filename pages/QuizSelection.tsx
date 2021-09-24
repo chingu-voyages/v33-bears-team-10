@@ -1,8 +1,6 @@
 import React from 'react';
 import QuizCard from '../components/sections/QuizCard';
 import styles from '../styles/QuizSelection.module.scss';
-import Link from 'next/link';
-import ArtAnimation from '../components/sections/ArtAnimation';
 
 const imageUrls: string[] = [
   'https://i.scdn.co/image/ab67616d00001e02b6d4566db0d12894a1a3b7a2',
