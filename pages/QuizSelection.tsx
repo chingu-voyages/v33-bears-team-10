@@ -1,7 +1,7 @@
 import React from 'react';
 import QuizCard from '../components/sections/QuizCard';
 import styles from '../styles/QuizSelection.module.scss';
-import Link from 'next/Link';
+import Link from 'next/link';
 import ArtAnimation from '../components/sections/ArtAnimation';
 
 const imageUrls: [string, string, string, string] = [
