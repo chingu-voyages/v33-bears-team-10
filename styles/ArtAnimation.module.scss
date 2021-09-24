@@ -20,6 +20,13 @@
   animation-iteration-count: infinite;
 }
 
+// FIXME:
+@for $i from 1 through 4 {
+  .img img:nth-child(#{$i}n) {
+    animation-delay: #{$i * 0.5}s;
+  }
+}
+
 .img1 {
   animation-delay: 0s;
 }
