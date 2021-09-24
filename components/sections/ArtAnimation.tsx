@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import styles from '../../styles/ArtAnimation.module.scss';
 interface Props {
-  imageUrls: [string, string, string, string];
+imageUrls: string[];
 }
 const imageSpecs = {
   height: 200,
