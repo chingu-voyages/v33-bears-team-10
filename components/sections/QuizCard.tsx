@@ -3,7 +3,7 @@ import ArtAnimation from '../sections/ArtAnimation';
 import styles from '../../styles/QuizSelection.module.scss';
 interface Props {
   text: string;
-  imageUrls: [string, string, string, string];
+  imageUrls: string[]
 }
 const QuizCard = ({ text, imageUrls }: Props) => {
   return (
