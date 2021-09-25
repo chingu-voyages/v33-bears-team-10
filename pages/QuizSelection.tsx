@@ -11,7 +11,7 @@ const imageUrls: string[] = [
 const QuizSelection = () => {
   return (
     <div className={styles.container}>
-      <main className={styles.main}>
+      <main className={styles.mainContent}>
         <div className={styles.cardFirst}>
           <QuizCard
             text='Play a game based on your playlists!'

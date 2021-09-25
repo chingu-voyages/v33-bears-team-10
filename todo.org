@@ -1,4 +1,9 @@
-* TODO:
+** DONE:
+Maybe you can add a middle ground parents with position relative?
+
+Something like a div in between the parent component and the image component
+
+** TODO:
 Consider renaming this main-content or something else along those lines,
 Having a class named main and an HTML element named main here can sometimes trip us up.
 you can also just select the main HTML item here if that's what you're going for.
