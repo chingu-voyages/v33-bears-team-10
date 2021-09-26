@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 import styles from '../styles/Nav.module.scss';
-import Link from 'next/Link';
+import Link from 'next/link';
 import useOnClickOutside from '../hooks/useOnClickOutside';
 
 const Nav = () => {

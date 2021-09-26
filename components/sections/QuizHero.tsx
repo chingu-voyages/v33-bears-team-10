@@ -2,7 +2,7 @@ import React from 'react';
 import styles from '../../styles/QuizHero.module.scss';
 
 import Image from 'next/image';
-import Link from 'next/Link';
+import Link from 'next/link';
 import quizImage from '../../public/undraw-quiz.svg';
 
 // Each hero will host the inner card component and details

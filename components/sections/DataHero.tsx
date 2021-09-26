@@ -2,7 +2,7 @@ import React from 'react';
 import styles from '../../styles/DataHero.module.scss';
 
 import { Doughnut } from 'react-chartjs-2';
-import Link from 'next/Link';
+import Link from 'next/link';
 
 const DataHero = () => {
   const labels = [
