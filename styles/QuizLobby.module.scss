@@ -47,6 +47,7 @@
   justify-content: center;
   min-height: 70%;
   background-color: blue;
+
   // min-height: 20em;
 }
 
@@ -56,7 +57,7 @@
   grid-template-rows: repeat(2, 1fr);
   gap: 1em;
   background-color: teal;
-  min-width: 50%;
+  // min-width: 50%;
 }
 .playerCard {
   display: flex;
@@ -68,6 +69,7 @@
 }
 .playerImageContainer {
   background-color: wheat;
+  margin: 0 1em;
   border-radius: 100%;
   min-height: 75%;
   min-width: 75%;
