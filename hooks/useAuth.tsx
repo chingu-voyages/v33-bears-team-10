@@ -20,7 +20,7 @@ interface AuthContext {
   user: User | null;
   signin?: () => void;
   signout: () => void;
-  SigninLink: any;
+  SigninLink: JSX.Element;
   verifyUser: () => void;
 }
 
