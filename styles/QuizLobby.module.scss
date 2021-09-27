@@ -1,0 +1,74 @@
+.pageContainer {
+  height: 100vh;
+  // min-height: 100vh;
+}
+
+// first section of page
+.section_1 {
+  min-height: 13em;
+  background-color: red;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.albumArt_container {
+  gap: 2em;
+  display: flex;
+}
+.albumImage {
+  background-color: tan;
+  padding: 3em;
+  min-height: 2em;
+  border-radius: var(--border-radius);
+}
+
+// second section of page
+.section_2 {
+  background-color: violet;
+  min-height: 5em;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.readyButton {
+  background-color: aqua;
+  border: none;
+  border-radius: 1em;
+  margin-right: 1em;
+  padding: 1em;
+}
+
+// third section of page.
+.section_3 {
+  display: flex;
+  justify-content: center;
+  min-height: 70%;
+  background-color: blue;
+  // min-height: 20em;
+}
+
+.playerSectionContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1em;
+  background-color: teal;
+  min-width: 50%;
+}
+.playerCard {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  background-color: tomato;
+  min-height: 5em;
+  min-width: 5em;
+}
+.playerImageContainer {
+  background-color: wheat;
+  border-radius: 100%;
+  min-height: 75%;
+  min-width: 75%;
+}
