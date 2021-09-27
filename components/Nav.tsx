@@ -2,8 +2,11 @@ import React, { useState, useRef } from 'react';
 import styles from '../styles/Nav.module.scss';
 import Link from 'next/link';
 import useOnClickOutside from '../hooks/useOnClickOutside';
+import { useAuth } from '../hooks/useAuth';
 
 const Nav = () => {
+  const auth = useAuth();
+
   const [navOpen, setNavOpen] = useState(false);
   const node = useRef(null);
 
@@ -49,6 +52,13 @@ const Nav = () => {
               <a className={styles.link}>About</a>
             </Link>
           </li>
+          {auth.user !== null && (
+            <li>
+              <button className={styles.signOut} onClick={() => auth.signout()}>
+                Sign Out
+              </button>
+            </li>
+          )}
           <div className={styles.hamburger}></div>
         </ul>
       </nav>

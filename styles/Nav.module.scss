@@ -6,9 +6,11 @@
   top: 0;
   z-index: 100;
   min-height: 4em;
-}
 
-.link {
+  .signOut {
+    all: unset;
+    display: inline;
+  }
 }
 
 .flexContainer {
@@ -29,12 +31,14 @@
   list-style-type: none;
   gap: 1em;
 
-  a {
+  a,
+  .signOut {
     padding: 1em;
     border-radius: var(--border-radius);
   }
 
-  a:hover {
+  a:hover,
+  .signOut:hover {
     background-color: aliceblue;
   }
 }
