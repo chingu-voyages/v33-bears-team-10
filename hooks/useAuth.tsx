@@ -9,16 +9,25 @@ import React, {
 import axios from 'axios';
 
 interface User {
-  username?: string;
-  avatar?: string;
-  token?: string;
+  accessToken: string;
+  displayName: string | undefined;
+  id: string;
+  product: string;
+  profileImage: string;
 }
 
 interface AuthContext {
   user: User | null;
-  signin: () => void;
+  signin?: () => void;
   signout: () => void;
+  SigninLink: any;
+  verifyUser: () => void;
 }
+
+const backendApi = axios.create({
+  withCredentials: true,
+  baseURL: process.env.NEXT_PUBLIC_BACKEND_API,
+});
 
 const authContext = createContext<AuthContext>({} as AuthContext);
 
@@ -35,34 +44,68 @@ export const useAuth = () => {
 
 // Provider hook that creates auth object and handles state
 function useProvideAuth() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<User | null>(null);
   // wrap methods we want to use, keep user in state
 
-  // have this authenticate our user,
-  const signin = () => {
-    console.log('fetch signin here');
+  const SigninLink = (
+    <a href={`${process.env.NEXT_PUBLIC_BACKEND_API}/api/auth`}>
+      Login with Spotify
+    </a>
+  );
+
+  // const testGetTopTracks = async () => {
+  //   try {
+  //     let fetchaAuth = await backendApi.get('/api/top/tracks');
+  //     console.log(fetchaAuth);
+  //   } catch (error: any) {
+  //     console.error('>>> ERR here', error);
+  //   }
+  // };
+
+  const verifyUser = async () => {
+    try {
+      // do an instance fetch here
+
+      let { data } = await backendApi.get('/api/auth/verify');
+
+      setUser(data);
+
+      // api/auth/verify
+    } catch (error) {
+      // console.error(error);
+      // catch the error here.
+    }
   };
 
   // clear our 0auth token / what we're using to keep them logged in
-  const signout = () => {};
+  const signout = async () => {
+    try {
+      // api/auth/logout
+      console.log('hit');
+      let { status } = await backendApi.get('/api/auth/logout');
+
+      setUser(null);
+
+      return ` status: ${status}, Sucessfully logged out.`;
+    } catch (error) {
+      console.error(error, 'ISSUE WITH SIGNOUT');
+    }
+  };
 
   // Subscribe to user on mount
   // Because this sets state in the callback it will cause any ...
   // ... component that utilizes this hook to re-render with the ...
   // ... latest auth object.
   useEffect(() => {
-    if (user) {
-      setUser(user);
-    } else {
-      // setUser(false);
-    }
+    console.log(user);
 
     // Cleanup subscription on unmount
-  }, []);
+  }, [user]);
   // Return the user object and auth methods
   return {
     user,
-    signin,
     signout,
+    SigninLink,
+    verifyUser,
   };
 }
