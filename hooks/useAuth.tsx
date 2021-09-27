@@ -81,7 +81,7 @@ function useProvideAuth() {
   const signout = async () => {
     try {
       // api/auth/logout
-      console.log('hit');
+
       let { status } = await backendApi.get('/api/auth/logout');
 
       setUser(null);
@@ -97,8 +97,7 @@ function useProvideAuth() {
   // ... component that utilizes this hook to re-render with the ...
   // ... latest auth object.
   useEffect(() => {
-    console.log(user);
-
+    // console.log(user);
     // Cleanup subscription on unmount
   }, [user]);
   // Return the user object and auth methods
