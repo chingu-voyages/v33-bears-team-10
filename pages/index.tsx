@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
@@ -7,9 +8,19 @@ import QuizHero from '../components/sections/QuizHero';
 import DataHero from '../components/sections/DataHero';
 import AboutHero from '../components/sections/AboutHero';
 
+import { useAuth } from '../hooks/useAuth';
+
 // TODO each 'Hero' section should lead us to their respective pages.
 
 const Home: NextPage = () => {
+  const auth = useAuth();
+
+  useEffect(() => {
+    if (!auth.user) {
+      auth.verifyUser();
+    }
+  }, [auth]);
+
   return (
     <div className={styles.container}>
       <Head>
