@@ -13,7 +13,7 @@ describe('QuizHero', () => {
     // act
     const image = await waitFor(() => screen.findByAltText('QuizImage'));
 
-    console.log(image);
+    // console.log(image);
     // assert
     expect(image).toBeInTheDocument();
   });
