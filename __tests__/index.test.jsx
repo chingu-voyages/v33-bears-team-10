@@ -10,6 +10,8 @@ import { render, screen } from '@testing-library/react';
 import Home from '../pages/index';
 import { useAuth } from '../hooks/useAuth';
 
+// https://polvara.me/posts/mocking-context-with-react-testing-library
+
 describe('Placeholder', () => {
   it('is used to move forward development.', () => {});
 });
