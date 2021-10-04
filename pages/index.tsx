@@ -1,18 +1,26 @@
+import { useEffect } from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
+import styles from '../styles/Home.module.scss';
 import ApplicationHero from '../components/sections/ApplicationHero';
 import QuizHero from '../components/sections/QuizHero';
 import DataHero from '../components/sections/DataHero';
 import AboutHero from '../components/sections/AboutHero';
 
+import { useAuth } from '../hooks/useAuth';
+
 // TODO each 'Hero' section should lead us to their respective pages.
 
-import styles from '../styles/Home.module.scss';
-const testAudio =
-  'https://p.scdn.co/mp3-preview/de1bf03287866de45384bd67332c9d98e9438aad?cid=774b29d4f13844c495f206cafdad9c86';
-
 const Home: NextPage = () => {
+  const auth = useAuth();
+
+  useEffect(() => {
+    if (!auth.user) {
+      auth.verifyUser();
+    }
+  }, [auth]);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -21,7 +29,7 @@ const Home: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <main className={styles.main}>
+      <main className={styles.mainContent}>
         <h2 className={styles.h2container}>Welcome to spotMe!</h2>
         <ApplicationHero />
         <QuizHero />
