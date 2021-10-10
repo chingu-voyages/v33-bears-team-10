@@ -1,16 +1,16 @@
 import React from 'react';
-import ArtAnimation from '../sections/ArtAnimation';
+import ArtAnimations from '../sections/ArtAnimations';
 import styles from '../../styles/QuizSelection.module.scss';
 interface Props {
   text: string;
-  imageUrls: string[]
+  images: string[];
 }
-const QuizCard = ({ text, imageUrls }: Props) => {
+const QuizCard = ({ text, images }: Props) => {
   return (
     // <div className={styles.flexContainer}>
     <div>
       <p>{text}</p>
-      <ArtAnimation imageUrls={imageUrls} />
+      <ArtAnimations images={images} />
       <button className={styles.button + ' ' + styles.ripple}>Play</button>
     </div>
   );

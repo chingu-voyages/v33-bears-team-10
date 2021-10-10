@@ -10,10 +10,8 @@
   width: 10em;
   height: 10em;
 }
-.img1,
-.img2,
-.img3,
-.img4 {
+
+.imgAnimation {
   position: absolute;
   width: 10em;
   height: 10em;
@@ -24,13 +22,27 @@
   animation-duration: 16s;
   animation-iteration-count: infinite;
 }
+// .img1,
+// .img2,
+// .img3,
+// .img4 {
+//   position: absolute;
+//   width: 10em;
+//   height: 10em;
+//   margin-top: 25%;
+//   background-position: center;
+//   opacity: 0;
+//   animation-name: fade;
+//   animation-duration: 16s;
+//   animation-iteration-count: infinite;
+// }
 
-// FIXME:
 @for $i from 1 through 4 {
   .img img:nth-child(#{$i}n) {
     animation-delay: #{$i * 0.5}s;
   }
 }
+//! BELOW CAN BE MADE IN LINE
 
 .img1 {
   animation-delay: 0s;

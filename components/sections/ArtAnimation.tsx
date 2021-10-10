@@ -2,32 +2,19 @@ import React from 'react';
 import Image from 'next/image';
 import styles from '../../styles/ArtAnimation.module.scss';
 interface Props {
-  imageUrls: string[];
+  image: string;
+  id: number;
 }
-const ArtAnimation = ({ imageUrls }: Props) => {
+// const animationDelay = '0s';
+const ArtAnimation = ({ image, id }: Props) => {
+  const animationDelay = `${id * 4}s`;
+  console.log(animationDelay);
+
   return (
-    <div className={styles.flexContainer}>
-      <div className={styles.img1}>
+    <div className={styles.imgAnimation}>
+      <div style={{ animationDelay: animationDelay }}>
         <div className={styles.container}>
-          <Image layout='fill' src={imageUrls[0]} alt='album cover 1' />
-        </div>
-      </div>
-
-      <div className={styles.img2}>
-        <div className={styles.container}>
-          <Image layout='fill' src={imageUrls[1]} alt='album cover 2' />
-        </div>
-      </div>
-
-      <div className={styles.img3}>
-        <div className={styles.container}>
-          <Image layout='fill' src={imageUrls[2]} alt='album cover 3' />
-        </div>
-      </div>
-
-      <div className={styles.img4}>
-        <div className={styles.container}>
-          <Image layout='fill' src={imageUrls[3]} alt='album cover 4' />
+          <Image layout='fill' src={image} alt='album cover 1' />
         </div>
       </div>
     </div>

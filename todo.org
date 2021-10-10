@@ -1,14 +1,5 @@
-** DONE:
-Maybe you can add a middle ground parents with position relative?
-
-Something like a div in between the parent component and the image component
-
-** DONE:
-Consider renaming this main-content or something else along those lines,
-Having a class named main and an HTML element named main here can sometimes trip us up.
-you can also just select the main HTML item here if that's what you're going for.
-If that doesn't work, you can add this main class CSS into the
-containing object using the main -element selector.
+* TODO:
+for the playlist id call get a playlist's items(spotify web api) and read the images from there
 
 * TODO:
 holding these images in the state since they will be fetched and the page has to re-render to show these changes.
