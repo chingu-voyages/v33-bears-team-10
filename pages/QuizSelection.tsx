@@ -8,6 +8,8 @@ const QuizSelection = () => {
     'https://i.scdn.co/image/ab67616d00001e028cb690f962092fd44bbe2bf4',
     'https://i.scdn.co/image/ab67616d00001e0228933b808bfb4cbbd0385400',
     'https://i.scdn.co/image/ab67616d00001e028cb690f962092fd44bbe2bf4',
+    'https://i.scdn.co/image/ab67616d00001e0228933b808bfb4cbbd0385400',
+    'https://i.scdn.co/image/ab67616d00001e028cb690f962092fd44bbe2bf4',
   ]);
 
   return (
