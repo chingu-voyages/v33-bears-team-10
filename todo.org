@@ -1,8 +1,7 @@
 * TODO: hook up back end
 
-** TODO: display images from top tracks alt={${album_song} cover art} 
-** TODO:look up component did mount and where it'll pull data if not signed in 
-** TODO:display images from playlists 
+** DONE: display images from top tracks alt={${album_song} cover art} 
+** TODO:display images from playlists, get rid of duplicates
 
 * DONE:
 holding these images in the state since they will be fetched and the page has to re-render to show these changes.

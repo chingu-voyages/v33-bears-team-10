@@ -14,7 +14,6 @@ interface Props {
 const ArtAnimations = ({ images }: Props) => {
   return (
     <div className={styles.flexContainer}>
-      {/* <button onClick={() => testGetTopTracks()}>TEST</button> */}
       {images.map((image, index) => (
         <ArtAnimation
           key={index}

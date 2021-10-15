@@ -11,7 +11,6 @@ interface Props {
 }
 const QuizCard = ({ text, images }: Props) => {
   return (
-    // <div className={styles.flexContainer}>
     <div>
       <p>{text}</p>
       <ArtAnimations images={images} />

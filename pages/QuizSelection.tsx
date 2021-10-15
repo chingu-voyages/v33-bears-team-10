@@ -8,6 +8,7 @@ interface Image {
   imageURL: string;
   songTitle: string;
 }
+
 const QuizSelection = () => {
   const backendApi = axios.create({
     withCredentials: true,
@@ -28,11 +29,11 @@ const QuizSelection = () => {
           songTitle: track.name,
         };
         imagesFromServer.push(Image);
-        // imagesFromServer.push(track.album.images[0].url);
-        console.log(track.name);
       }
-      setImages(imagesFromServer);
-      console.log(imagesFromServer);
+      const uniqueImagesFromServer = imagesFromServer.filter(
+        (v, i, a) => a.findIndex((t) => t.imageURL === v.imageURL) === i
+      );
+      setImages(uniqueImagesFromServer);
     } catch (error: any) {
       console.error('>>> ERR here', error);
     }
