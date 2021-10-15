@@ -3,21 +3,33 @@ import { useState, useEffect } from 'react';
 import QuizCard from '../components/sections/QuizCard';
 import styles from '../styles/QuizSelection.module.scss';
 import axios from 'axios';
+
+interface Image {
+  imageURL: string;
+  songTitle: string;
+}
 const QuizSelection = () => {
   const backendApi = axios.create({
     withCredentials: true,
     baseURL: process.env.NEXT_PUBLIC_BACKEND_API,
   });
-  const [images, setImages] = useState<string[]>([]);
+  const [images, setImages] = useState<Image[]>([]);
 
   const fetchTopTracks = async () => {
     try {
       const { data } = await backendApi.get('/api/top/tracks');
 
       const tracks = data.items;
-      const imagesFromServer: string[] = [];
+      const imagesFromServer: Image[] = [];
+
       for (const track of tracks) {
-        imagesFromServer.push(track.album.images[0].url);
+        let Image: Image = {
+          imageURL: track.album.images[0].url,
+          songTitle: track.name,
+        };
+        imagesFromServer.push(Image);
+        // imagesFromServer.push(track.album.images[0].url);
+        console.log(track.name);
       }
       setImages(imagesFromServer);
       console.log(imagesFromServer);
