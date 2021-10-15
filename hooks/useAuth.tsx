@@ -53,18 +53,19 @@ function useProvideAuth() {
     </a>
   );
 
-  // const testGetTopTracks = async () => {
-  //   try {
-  //     let fetchaAuth = await backendApi.get('/api/top/tracks');
-  //     console.log(fetchaAuth);
-  //   } catch (error: any) {
-  //     console.error('>>> ERR here', error);
-  //   }
-  // };
+  const testGetTopTracks = async () => {
+    try {
+      let fetchaAuth = await backendApi.get('/api/top/tracks');
+      console.log(fetchaAuth);
+    } catch (error: any) {
+      console.error('>>> ERR here', error);
+    }
+  };
 
   const verifyUser = async () => {
     try {
       // do an instance fetch here
+      testGetTopTracks();
 
       let { data } = await backendApi.get('/api/auth/verify');
 
