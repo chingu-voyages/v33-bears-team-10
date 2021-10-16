@@ -1,0 +1,75 @@
+.container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(#3a445c, var(--dark-shades));
+}
+
+@media screen and (max-width: 321px) {
+  .container {
+    padding: 0;
+  }
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+
+.card {
+  composes: cardContainer from './utils.module.scss';
+
+  text-align: center;
+  z-index: 5;
+
+  &First {
+    @extend .card;
+    // background-color: var(--light-grey);
+    background: linear-gradient(#61b16c, #b1eedc);
+  }
+  &Second {
+    @extend .card;
+    background: linear-gradient(#97b2f2, #b1e7ee);
+    // background: linear-gradient(var(--light-grey), #9c9c9c3f);
+  }
+}
+
+.button {
+  position: relative;
+  overflow: hidden;
+  color: var(--light-shades);
+  background-color: var(--main-brand-color);
+  border-radius: var(--border-radius);
+  border-style: solid;
+  font-family: inherit;
+  transition: background 400ms;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  outline: none;
+  border: none;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.ripple {
+  background-position: center;
+  transition: background 0.8s;
+  &.ripple:hover {
+    background: var(--main-brand-color)
+      radial-gradient(circle, transparent 1%, var(--light-grey) 1%)
+      center/15000%;
+  }
+  &.ripple:active {
+    background-color: var(--main-brand-color);
+    background-size: 100%;
+    transition: background 0s;
+  }
+}

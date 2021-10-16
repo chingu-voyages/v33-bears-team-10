@@ -43,7 +43,7 @@ const Nav = () => {
             </Link>
           </li>
           <li>
-            <Link href='/'>
+            <Link href='/Data'>
               <a className={styles.link}>Data</a>
             </Link>
           </li>
