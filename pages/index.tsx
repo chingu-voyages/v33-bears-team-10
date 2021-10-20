@@ -36,7 +36,6 @@ const Home: NextPage = () => {
         <QuizHero />
         <DataHero />
         <AboutHero />
-        {/* <TestPage /> */}
       </main>
     </div>
   );
