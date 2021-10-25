@@ -10,10 +10,8 @@
   width: 10em;
   height: 10em;
 }
-.img1,
-.img2,
-.img3,
-.img4 {
+
+.imgAnimation {
   position: absolute;
   width: 10em;
   height: 10em;
@@ -23,26 +21,6 @@
   animation-name: fade;
   animation-duration: 16s;
   animation-iteration-count: infinite;
-}
-
-// FIXME:
-@for $i from 1 through 4 {
-  .img img:nth-child(#{$i}n) {
-    animation-delay: #{$i * 0.5}s;
-  }
-}
-
-.img1 {
-  animation-delay: 0s;
-}
-.img2 {
-  animation-delay: 4s;
-}
-.img3 {
-  animation-delay: 8s;
-}
-.img4 {
-  animation-delay: 12s;
 }
 
 @keyframes fade {

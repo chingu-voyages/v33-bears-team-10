@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
+import TestPage from './TestPage';
 import styles from '../styles/Home.module.scss';
 import ApplicationHero from '../components/sections/ApplicationHero';
 import QuizHero from '../components/sections/QuizHero';
